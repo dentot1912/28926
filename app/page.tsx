@@ -21,6 +21,14 @@ gsap.registerPlugin(ScrollTrigger);
 const BIRTHDAY_DATE = new Date('2026-07-03T00:00:00');
 const NAME = 'Sayang';
 const SENDER_NAME = 'Aku ❤️';
+const YOUTUBE_MUSIC_ID = 'awWKxGftWh4'; // https://www.youtube.com/watch?v=awWKxGftWh4
+
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: (() => void) | undefined;
+  }
+}
 
 /* ── Colors ── */
 const C = {
@@ -2859,62 +2867,101 @@ export default function BirthdayPage() {
   const [blooming, setBlooming] = useState(false);
   const [confetti, setConfetti] = useState(false);
   const [musicMuted, setMusicMuted] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const gainNodeRef = useRef<GainNode | null>(null);
+  const ytPlayerRef = useRef<any>(null);
+  const shouldPlayRef = useRef(false);
+
+  // Initialize YouTube IFrame Player
+  useEffect(() => {
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    const createPlayer = () => {
+      if (!window.YT || !window.YT.Player || ytPlayerRef.current) return;
+      try {
+        ytPlayerRef.current = new window.YT.Player('youtube-audio-player', {
+          height: '1',
+          width: '1',
+          videoId: YOUTUBE_MUSIC_ID,
+          playerVars: {
+            autoplay: 0,
+            controls: 0,
+            loop: 1,
+            playlist: YOUTUBE_MUSIC_ID,
+            playsinline: 1,
+            rel: 0,
+            enablejsapi: 1,
+          },
+          events: {
+            onReady: (event: any) => {
+              try {
+                event.target.setVolume(55);
+                if (shouldPlayRef.current) {
+                  event.target.playVideo();
+                }
+              } catch { }
+            },
+            onStateChange: (event: any) => {
+              if (event.data === (window.YT.PlayerState?.ENDED ?? 0)) {
+                try {
+                  event.target.playVideo();
+                } catch { }
+              }
+            },
+          },
+        });
+      } catch (err) {
+        console.warn('YouTube Player initialization error:', err);
+      }
+    };
+
+    if (window.YT && window.YT.Player) {
+      createPlayer();
+    } else {
+      const prevCallback = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        if (typeof prevCallback === 'function') prevCallback();
+        createPlayer();
+      };
+    }
+  }, []);
 
   // Play background music on unlock
   const startBacksound = () => {
-    if (!audioRef.current) {
-      const audio = new Audio('/images/music.mp3');
-      audio.loop = true;
-      audio.crossOrigin = 'anonymous';
-      audio.volume = 0.55;
-      audioRef.current = audio;
-
-      // Setup Web Audio API for Safari/iOS dynamic volume ducking support
+    shouldPlayRef.current = true;
+    setMusicMuted(false);
+    if (ytPlayerRef.current && typeof ytPlayerRef.current.playVideo === 'function') {
       try {
-        const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-        if (AudioContextClass) {
-          const ctx = new AudioContextClass();
-          const source = ctx.createMediaElementSource(audio);
-          const gainNode = ctx.createGain();
-          gainNode.gain.setValueAtTime(0.55, ctx.currentTime);
-          source.connect(gainNode);
-          gainNode.connect(ctx.destination);
-          audioCtxRef.current = ctx;
-          gainNodeRef.current = gainNode;
-        }
-      } catch (e) {
-        console.warn('Web Audio API setup skipped or failed:', e);
+        ytPlayerRef.current.playVideo();
+      } catch (err) {
+        console.log('Autoplay policy caught, will play on user interaction:', err);
       }
     }
-
-    if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
-      audioCtxRef.current.resume().catch(() => { });
-    }
-
-    audioRef.current.play().catch((err) => {
-      console.log('Autoplay policy caught, will play on user interaction:', err);
-    });
   };
 
   const toggleMusic = () => {
-    if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
-      audioCtxRef.current.resume().catch(() => { });
-    }
-    if (!audioRef.current) {
-      startBacksound();
-      setMusicMuted(false);
+    if (!ytPlayerRef.current || typeof ytPlayerRef.current.getPlayerState !== 'function') {
+      setMusicMuted((prev) => !prev);
+      shouldPlayRef.current = !shouldPlayRef.current;
       return;
     }
-    if (audioRef.current.paused) {
-      audioRef.current.play().catch(() => { });
-      setMusicMuted(false);
-    } else {
-      audioRef.current.pause();
-      setMusicMuted(true);
+    try {
+      const state = ytPlayerRef.current.getPlayerState();
+      if (state === 1) { // playing
+        ytPlayerRef.current.pauseVideo();
+        setMusicMuted(true);
+        shouldPlayRef.current = false;
+      } else {
+        ytPlayerRef.current.playVideo();
+        setMusicMuted(false);
+        shouldPlayRef.current = true;
+      }
+    } catch {
+      setMusicMuted((prev) => !prev);
     }
   };
 
@@ -2922,57 +2969,39 @@ export default function BirthdayPage() {
     setConfetti(true);
     setTimeout(() => setConfetti(false), 6000);
     // Ensure backsound is running
-    if (audioRef.current && audioRef.current.paused && !musicMuted) {
-      if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
-        audioCtxRef.current.resume().catch(() => { });
-      }
-      audioRef.current.play().catch(() => { });
+    if (!musicMuted && ytPlayerRef.current && typeof ytPlayerRef.current.playVideo === 'function') {
+      try {
+        ytPlayerRef.current.playVideo();
+      } catch { }
     }
   };
 
-  // Audio ducking: lower backsound volume when voice note plays (compatible with Safari/iOS)
+  // Audio ducking: lower backsound volume when voice note plays
   const handleVoiceStateChange = (playing: boolean) => {
-    if (!audioRef.current) return;
-    const targetVolume = playing ? 0.12 : 0.55;
-
-    // 1. Web Audio API GainNode (Works 100% on Safari iOS / macOS)
-    if (gainNodeRef.current && audioCtxRef.current) {
-      if (audioCtxRef.current.state === 'suspended') {
-        audioCtxRef.current.resume().catch(() => { });
-      }
-      const currTime = audioCtxRef.current.currentTime;
-      gainNodeRef.current.gain.cancelScheduledValues(currTime);
-      gainNodeRef.current.gain.setValueAtTime(gainNodeRef.current.gain.value, currTime);
-      gainNodeRef.current.gain.linearRampToValueAtTime(targetVolume, currTime + 0.4);
-    }
-
-    // 2. Standard HTMLAudioElement volume fade (for Chrome/Firefox/Edge)
+    if (!ytPlayerRef.current || typeof ytPlayerRef.current.setVolume !== 'function') return;
+    const targetVolume = playing ? 15 : 55;
     try {
-      const currentVol = audioRef.current.volume;
-      const steps = 10;
-      const diff = (targetVolume - currentVol) / steps;
-      let stepCount = 0;
-
-      const fadeInterval = setInterval(() => {
-        if (!audioRef.current) {
-          clearInterval(fadeInterval);
-          return;
-        }
-        stepCount++;
-        const nextVol = Math.max(0, Math.min(1, audioRef.current.volume + diff));
-        audioRef.current.volume = nextVol;
-        if (stepCount >= steps) {
-          audioRef.current.volume = targetVolume;
-          clearInterval(fadeInterval);
-        }
-      }, 40);
-    } catch {
-      // Ignored if read-only on certain WebKit versions
-    }
+      ytPlayerRef.current.setVolume(targetVolume);
+    } catch { }
   };
 
   return (
     <>
+      {/* Hidden YouTube Audio Player */}
+      <div
+        style={{
+          position: 'fixed',
+          top: -9999,
+          left: -9999,
+          width: '1px',
+          height: '1px',
+          opacity: 0,
+          pointerEvents: 'none',
+          zIndex: -1,
+        }}
+      >
+        <div id="youtube-audio-player" />
+      </div>
       {/* PIN Gate with soft fade out */}
       {!unlocked && (
         <PinLockScreen
