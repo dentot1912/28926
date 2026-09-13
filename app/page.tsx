@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
    ═══════════════════════════════════════════════════════════════════════════ */
 const BIRTHDAY_DATE = new Date('2026-07-03T00:00:00');
 const NAME = 'Sayang';
-const SENDER_NAME = 'Rezkha ❤️';
+const SENDER_NAME = 'Aku ❤️';
 
 /* ── Colors ── */
 const C = {
@@ -78,28 +78,16 @@ const WISHES = [
 
 const MEMORIES = [
   {
-    Icon: Camera,
-    label: "Photobooth Date",
-    desc: "Momen seru kita di photobooth, pamer hasil foto strip biru dengan senyum dan pose tergemas.",
+    Icon: Sparkles,
+    label: "First Meet",
+    desc: "Momen awal pertemuan pertama kita yang penuh kesan manis, awal mula dari segala cerita indah kita.",
     img: "images/img1.jpeg",
   },
   {
-    Icon: Bike,
-    label: "Motoran Bareng",
-    desc: "Keliling jalanan berdua naik motor, menikmati angin sepoi-sepoi sambil pose lucu pakai helm.",
-    img: "images/img2.jpeg",
-  },
-  {
-    Icon: Smile,
-    label: "Kacamata Kembar",
-    desc: "Kompak pakai kacamata frame hitam dengan ekspresi konyol yang selalu sukses bikin ketawa tiap diingat.",
-    img: "images/img3.jpeg",
-  },
-  {
-    Icon: Moon,
-    label: "Night Stroll",
-    desc: "Jalan-jalan santai di bawah langit malam, ditemani senyuman manis dan pose gemasmu.",
-    img: "images/img4.jpeg",
+    Icon: Heart,
+    label: "First Date",
+    desc: "Kencan pertama kita yang penuh debaran manis, senyuman malu-malu, dan kenangan indah yang tak terlupakan.",
+    img: "images/img6.jpeg",
   },
   {
     Icon: Coffee,
@@ -108,10 +96,22 @@ const MEMORIES = [
     img: "images/img5.jpeg",
   },
   {
+    Icon: Camera,
+    label: "Fisheye & Pose Seru",
+    desc: "Momen seru dan gaya kocak dengan lensa fisheye sudut lebar, selalu ada tawa lepas dan kebebasan saat bersamamu.",
+    img: "images/img2.jpeg",
+  },
+  {
     Icon: Heart,
-    label: "Nyender Nyaman",
-    desc: "Rebahan dan nyender santai di sampingmu, tempat paling nyaman di dunia dengan sejuta kelucuan kita.",
-    img: "images/img6.jpeg",
+    label: "Gandengan di Mall",
+    desc: "Momen manis merangkul lenganmu saat jalan-jalan berdua di mall, senyuman indahmu selalu membuat hatiku luluh.",
+    img: "images/img3.jpeg",
+  },
+  {
+    Icon: Smile,
+    label: "Pose Santai & Penuh Sayang",
+    desc: "Selfie santai dengan senyuman tulus dan pose lucu, menikmati kebersamaan sederhana kita yang selalu menghangatkan hati.",
+    img: "images/img4.jpeg",
   },
 ];
 
@@ -1047,7 +1047,7 @@ function LetterSection() {
                 <div data-letter-line style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                   <Flower2 size={18} style={{ color: C.blush }} />
                   <p style={{ fontSize: 16, fontWeight: 600, fontFamily: SERIF, fontStyle: 'italic', color: C.blushD }}>
-                    Selamat Ulang Tahun, Rania Sayangku! ❤️
+                    Selamat Ulang Tahun, Sayangku! ❤️
                   </p>
                 </div>
 
@@ -1397,9 +1397,9 @@ function WishesSection() {
             <div style={{ width: 34, height: 1.5, background: C.gold }} />
             <MiniLilyFlower size={28} />
           </div>
-          <SectionTitle center>18 Doa & Harapan Cinta</SectionTitle>
+          <SectionTitle center>Doa & Harapan Cinta</SectionTitle>
           <p style={{ marginTop: 14, fontSize: 15, color: C.textM, fontFamily: SANS, maxWidth: 520, margin: '14px auto 0', lineHeight: 1.6 }}>
-            Spesial di hari ulang tahunmu yang ke-18, ini 18 untaian doa dan harapan tulusku untukmu, sayang:
+            Ini untaian doa dan harapan tulusku untukmu, sayang:
           </p>
         </div>
 
@@ -1488,136 +1488,52 @@ function WishesSection() {
 /* ── Gallery data with span information for masonry feel ── */
 const GALLERY_ITEMS = [
   {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.38.jpeg',
-    label: 'Gelang Couple & Kopi',
-    desc: 'Duduk santai di kafe sambil pamer gelang couple bintang kita dan pose menggemaskan.',
+    src: 'images/img1.jpeg',
+    label: 'First Meet',
+    desc: 'Momen awal pertemuan pertama kita yang penuh kesan manis, awal mula dari segala cerita indah kita.',
     Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.38 (1).jpeg',
-    label: 'Filter Konyol & Tawa',
-    desc: 'Momen ngakak berdua main filter mata kartun, tawa lepas bersamamu selalu bikin hari lebih berwarna.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.38 (2).jpeg',
-    label: 'Mirror Selfie OOTD',
-    desc: 'Mirror selfie berdua di lorong dengan outfit senada, berdiri berdampingan dengan senyum termanis.',
+    src: 'images/img2.jpeg',
+    label: 'Fisheye Ceria & Gaya Seru',
+    desc: 'Pose gemas dan kocak dengan lensa fisheye sudut lebar, selalu ada tawa lepas dan kebebasan saat bersamamu.',
     Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.39.jpeg',
-    label: 'Pouty & Cute',
-    desc: 'Ekspresi cemberut gemas pakai kacamata transparan yang selalu sukses bikin luluh dan gemas.',
-    Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.39 (1).jpeg',
-    label: 'Nostalgia Masa Sekolah',
-    desc: 'Foto kenangan refleksi jendela saat masih mengenakan seragam putih abu-abu dengan penuh cerita manis.',
-    Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.45.jpeg',
-    label: 'Candid di Kafe',
-    desc: 'Momen candid saat kita duduk berdua mengobrol santai di sudut kafe favorit kita.',
-    Icon: Coffee, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.46.jpeg',
-    label: 'Fisheye Studio Vintage',
-    desc: 'Mirror selfie estetik dengan lensa fisheye di studio bernuansa vintage yang hangat dan artistik.',
-    Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.47.jpeg',
-    label: 'Pramuka Sweet Memories',
-    desc: 'Foto berdua mengenakan seragam pramuka di photobooth vintage dengan senyum tulus dan bangga.',
-    Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.50.jpeg',
-    label: 'Tatap Manis di Kafe',
-    desc: 'Momen manis saat kamu tersipu malu dan aku menatapmu dengan rasa kagum dan sayang yang begitu dalam.',
-    Icon: Coffee, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.53.jpeg',
-    label: 'Night Ride Berdua',
-    desc: 'Menikmati sejuknya angin malam saat motoran berdua menyusuri jalanan kota yang tenang.',
-    Icon: Moon, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.53 (1).jpeg',
-    label: 'Menunggu Hasil Foto',
-    desc: 'Menanti hasil cetak photobooth dengan antusias, mengabadikan setiap frame kebersamaan kita.',
-    Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.54.jpeg',
-    label: 'Malam di Taman Kota',
-    desc: 'Berdiri bersama di bawah rindangnya pohon taman kota di malam hari, penuh canda dan kehangatan.',
-    Icon: Moon, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.54 (1).jpeg',
-    label: 'Konser Malam Kita',
-    desc: 'Menikmati gemerlap panggung konser malam hari bersama, bernyanyi dan larut dalam lantunan musik indah.',
-    Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.55.jpeg',
-    label: 'Pose Lucu Berdua',
-    desc: 'Selfie santai dengan pose tangan di dagu dan senyuman manis berhijab putih yang selalu meneduhkan.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.55 (1).jpeg',
-    label: 'Gaya Konyol Bersama',
-    desc: 'Pose gaya metal dan lidah melet yang kocak, bukti bahwa kita selalu bebas jadi diri sendiri saat berdua.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.55 (2).jpeg',
-    label: 'Helm & Jalanan',
-    desc: 'Selfie di atas motor lengkap dengan helm, menikmati perjalanan panjang berdua di bawah langit terbuka.',
-    Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.56.jpeg',
-    label: 'Kaca Spion Momen',
-    desc: 'Potret estetik dari sudut pandang spion motor, mengabadikan ekspresi seru kita di tengah perjalanan.',
-    Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.56 (1).jpeg',
-    label: 'Peace & Kedipan Manis',
-    desc: 'Kompak berpose peace dengan kedipan mata centil dan kacamata hitam yang penuh pesona.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.57.jpeg',
-    label: 'Gokil Bareng',
-    desc: 'Pose lidah melet dan senyum lebar penuh ekspresi gokil yang tak pernah gagal mengukir tawa.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.57 (1).jpeg',
-    label: 'Bisikan Rahasia Kita',
-    desc: 'Momen manis saling berbisik rahasia kecil sambil menahan tawa bahagia di antara kita berdua.',
-    Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
-  },
-  {
-    src: 'memories/WhatsApp Image 2026-09-10 at 20.08.57 (2).jpeg',
-    label: 'Nyender Penuh Kasih',
-    desc: 'Menyandarkan kepala dengan senyum hangat dan teduh, merasakan ketenangan dan kenyamanan sejati.',
+    src: 'images/img3.jpeg',
+    label: 'Gandengan Tangan di Mall',
+    desc: 'Momen manis merangkul lenganmu saat jalan-jalan berdua, senyuman indahmu selalu membuat hatiku luluh.',
     Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'memories/WhatsApp Video 2026-09-10 at 20.08.55.mp4',
-    label: 'Video Kenangan Spesial',
-    desc: 'Klip rekaman video manis yang mengabadikan tawa ceria dan kebersamaan hangat kita yang tak terlupakan.',
+    src: 'images/img4.jpeg',
+    label: 'Pose Santai & Penuh Sayang',
+    desc: 'Selfie santai dengan senyuman tulus dan pose lucu, menghabiskan waktu sederhana berdua dengan penuh cinta.',
+    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/img5.jpeg',
+    label: 'Tawa Malu & Gemas',
+    desc: 'Tawa lepas sambil menutup mulut karena tersipu malu, momen canda tawa paling berharga di antara kita.',
+    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/img6.jpeg',
+    label: 'First Date',
+    desc: 'Kencan pertama kita yang penuh debaran manis, senyuman malu-malu, dan kenangan indah yang tak terlupakan.',
+    Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories.mp4',
+    label: 'Video Kenangan Manis',
+    desc: 'Klip video rekaman indah yang mengabadikan setiap detik kebersamaan, tawa, dan cerita cinta kita.',
     Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
+  },
+  {
+    src: 'images/footer.mp4',
+    label: 'Video Kenangan Manis',
+    desc: 'Klip video rekaman indah yang mengabadikan setiap detik kebersamaan, tawa, dan cerita cinta kita.',
+    Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
 ];
 
@@ -1674,9 +1590,10 @@ const PillDot = React.memo(function PillDot({ isActive, onClick }: { isActive: b
 });
 
 /* ── Lightbox ── */
-function GalleryLightbox({ images, current, onClose, onNav }: {
+function GalleryLightbox({ images, current, onClose, onNav, onMediaPlayStateChange }: {
   images: typeof GALLERY_ITEMS; current: number;
   onClose: () => void; onNav: (dir: number) => void;
+  onMediaPlayStateChange?: (playing: boolean) => void;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const item = images[current];
@@ -1685,6 +1602,20 @@ function GalleryLightbox({ images, current, onClose, onNav }: {
   const onNavRef = useRef(onNav);
   onCloseRef.current = onClose;
   onNavRef.current = onNav;
+
+  // Pastikan volume kembali normal saat modal ditutup
+  useEffect(() => {
+    return () => {
+      onMediaPlayStateChange?.(false);
+    };
+  }, [onMediaPlayStateChange]);
+
+  // Saat berpindah item (jika bukan mp4 atau berganti video), update status
+  useEffect(() => {
+    if (!item.src.endsWith('.mp4')) {
+      onMediaPlayStateChange?.(false);
+    }
+  }, [item.src, onMediaPlayStateChange]);
 
   /* ── Keyboard navigation ── */
   useEffect(() => {
@@ -1790,6 +1721,9 @@ function GalleryLightbox({ images, current, onClose, onNav }: {
               controls
               autoPlay
               playsInline
+              onPlay={() => onMediaPlayStateChange?.(true)}
+              onPause={() => onMediaPlayStateChange?.(false)}
+              onEnded={() => onMediaPlayStateChange?.(false)}
               className="clean-lightbox-media"
             />
           ) : (
@@ -1831,7 +1765,7 @@ function GalleryLightbox({ images, current, onClose, onNav }: {
 }
 
 /* ── Gallery Section ── */
-function GallerySection() {
+function GallerySection({ onMediaPlayStateChange }: { onMediaPlayStateChange?: (playing: boolean) => void }) {
   const ref = useRef<HTMLElement>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [activeTag, setActiveTag] = useState('Memories');
@@ -2127,6 +2061,7 @@ function GallerySection() {
           current={lightbox}
           onClose={() => setLightbox(null)}
           onNav={navLightbox}
+          onMediaPlayStateChange={onMediaPlayStateChange}
         />
       )}
     </>
@@ -2408,12 +2343,21 @@ function FinalSection({
       padding: '0', minHeight: '80vh',
       overflow: 'hidden',
     }}>
-      {/* Background photo */}
+      {/* Background video */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <img src='images/footer.jpeg' alt="Couple sunset" style={{
-          width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-          animation: 'kenBurns 25s ease-in-out infinite',
-        }} />
+        <video
+          src="images/footer.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
         <div style={{
           position: 'absolute', inset: 0,
           background: 'linear-gradient(to bottom, rgba(45,31,20,0.6) 0%, rgba(45,31,20,0.75) 50%, rgba(45,31,20,0.85) 100%)',
@@ -2426,23 +2370,6 @@ function FinalSection({
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         minHeight: '80vh', padding: '80px 24px', textAlign: 'center',
       }}>
-        <div data-f="heart" style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 18,
-          marginBottom: 32,
-        }}>
-          <div style={{
-            width: 86, height: 86, borderRadius: '50%',
-            background: 'rgba(255,255,255,0.12)',
-            backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(255,255,255,0.2)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            animation: 'pulseGlow 3s ease-in-out infinite',
-          }}>
-            <MiniLilyFlower size={52} />
-          </div>
-        </div>
 
         <div data-f="title">
           <h2 style={{
@@ -2481,7 +2408,7 @@ function FinalSection({
    PIN LOCK SCREEN — Secret Birthday Gate with Flower Blooming Scene
    ═══════════════════════════════════════════════════════════════════════════ */
 
-const SECRET_PIN = '29925';
+const SECRET_PIN = '1409';
 
 function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBlooming: () => void }) {
   const [pin, setPin] = useState('');
@@ -2491,10 +2418,10 @@ function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBloom
   const lockRef = useRef<HTMLDivElement>(null);
 
   const handleKey = (digit: string) => {
-    if (pin.length < 5 && !success) {
+    if (pin.length < 4 && !success) {
       const newPin = pin + digit;
       setPin(newPin);
-      if (newPin.length === 5) {
+      if (newPin.length === 4) {
         verifyPin(newPin);
       }
     }
@@ -2639,17 +2566,17 @@ function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBloom
         }}>
           {success
             ? 'Membuka kejutan cinta spesial untukmu...'
-            : (error ? 'PIN salah! Coba lagi ya sayang' : 'Masukkan 5 digit PIN untuk membuka surat cintamu')}
+            : (error ? 'PIN salah! Coba lagi ya sayang' : 'Masukkan 4 digit PIN untuk membuka surat cintamu')}
         </p>
 
-        {/* 5 Digit Indicators */}
+        {/* 4 Digit Indicators */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
           gap: 14,
           marginBottom: 32,
         }}>
-          {[0, 1, 2, 3, 4].map(idx => {
+          {[0, 1, 2, 3].map(idx => {
             const filled = pin.length > idx;
             return (
               <div
@@ -3280,7 +3207,7 @@ export default function BirthdayPage() {
         <LetterSection />
         <MemoriesSection />
         <WishesSection />
-        <GallerySection />
+        <GallerySection onMediaPlayStateChange={handleVoiceStateChange} />
         <QuoteSection />
         <FinalSection
           onCelebrate={handleCelebrate}
