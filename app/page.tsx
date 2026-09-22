@@ -1613,6 +1613,66 @@ const GALLERY_ITEMS = [
     desc: 'Kumpulan cuplikan kenangan indah kita: dari cermin lucu, belanja boneka, baca buku, makan bareng hingga saling genggam tangan erat.',
     Icon: Play, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
   },
+  {
+    src: 'images/newmemories/WhatsApp Image 2026-09-22 at 18.32.18.jpeg',
+    label: 'Special Moment',
+    desc: 'Momen berharga dan manis yang selalu membekas di dalam ingatan bersamamu.',
+    Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/WhatsApp Video 2026-09-22 at 18.25.55.mp4',
+    label: 'Sweet Video Memory',
+    desc: 'Keseruan dan canda tawa kita berdua yang terekam indah.',
+    Icon: Play, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/WhatsApp Video 2026-09-22 at 18.32.20.mp4',
+    label: 'Lovely Moments',
+    desc: 'Detik-detik kebersamaan penuh kehangatan dan kebahagiaan.',
+    Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/beachdate.mp4',
+    label: 'Beach Date',
+    desc: 'Menikmati hembusan angin pantai dan deburan ombak berdua bersamamu.',
+    Icon: Play, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/firstdateinbalam.mp4',
+    label: 'First Date in Balam',
+    desc: 'Kencan pertama di Balam yang penuh cerita manis dan momen tak terlupakan.',
+    Icon: Play, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/firsttimephotobox.mp4',
+    label: 'First Time Photobox',
+    desc: 'Momen pertama kali berfoto ria di photobox, penuh tawa dan ekspresi lucu.',
+    Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/lunchdate.jpeg',
+    label: 'Lunch Date',
+    desc: 'Makan siang berdua yang selalu terasa lebih lezat dan spesial di sampingmu.',
+    Icon: Heart, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/mainkebukit kebo.jpeg',
+    label: 'Main ke Bukit Kebo',
+    desc: 'Petualangan seru dan pemandangan asri saat main ke Bukit Kebo bareng kamu.',
+    Icon: Camera, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/myhappyface whenyouwere around.jpeg',
+    label: 'My Happy Face When You Were Around',
+    desc: 'Wajah paling bahagia yang selalu terpancar saat berada di dekatmu.',
+    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/newmemories/nature.jpeg',
+    label: 'Nature Date',
+    desc: 'Menikmati sejuk dan indahnya alam bersama orang yang paling dicintai.',
+    Icon: Flower2, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
+  },
 ];
 
 const GALLERY_TAGS = [
