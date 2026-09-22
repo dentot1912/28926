@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 const BIRTHDAY_DATE = new Date('2026-07-03T00:00:00');
 const NAME = 'Sayang';
 const SENDER_NAME = 'Aku ❤️';
-const YOUTUBE_MUSIC_ID = 'awWKxGftWh4'; // https://www.youtube.com/watch?v=awWKxGftWh4
+const YOUTUBE_MUSIC_ID = 'gvunApwKIiY'; // https://www.youtube.com/watch?v=awWKxGftWh4
 
 declare global {
   interface Window {
@@ -87,39 +87,39 @@ const WISHES = [
 const MEMORIES = [
   {
     Icon: Sparkles,
-    label: "First Meet",
+    label: "Momen Pertama Ketemu",
     desc: "Momen awal pertemuan pertama kita yang penuh kesan manis, awal mula dari segala cerita indah kita.",
     img: "images/img1.jpeg",
   },
   {
-    Icon: Heart,
-    label: "First Date",
-    desc: "Kencan pertama kita yang penuh debaran manis, senyuman malu-malu, dan kenangan indah yang tak terlupakan.",
-    img: "images/img6.jpeg",
-  },
-  {
-    Icon: Coffee,
-    label: "Momen Ceria Bersama",
-    desc: "Duduk bareng sambil ngobrol seru, senyum cerah dan tawa manismu selalu jadi energi terbaikku.",
-    img: "images/img5.jpeg",
-  },
-  {
-    Icon: Camera,
-    label: "Fisheye & Pose Seru",
-    desc: "Momen seru dan gaya kocak dengan lensa fisheye sudut lebar, selalu ada tawa lepas dan kebebasan saat bersamamu.",
+    Icon: Moon,
+    label: "First Date Sampai Gelap",
+    desc: "Kencan pertama kita yang penuh tawa dan cerita seru, ngobrol berdua tanpa terasa waktu berlalu sampai malam tiba.",
     img: "images/img2.jpeg",
   },
   {
-    Icon: Heart,
-    label: "Gandengan di Mall",
-    desc: "Momen manis merangkul lenganmu saat jalan-jalan berdua di mall, senyuman indahmu selalu membuat hatiku luluh.",
+    Icon: Flame,
+    label: "Seblak Date",
+    desc: "Momen kulineran seblak favorit berdua yang nikmat dan pedas manis, sederhana tapi selalu menghangatkan suasana.",
     img: "images/img3.jpeg",
   },
   {
-    Icon: Smile,
-    label: "Pose Santai & Penuh Sayang",
-    desc: "Selfie santai dengan senyuman tulus dan pose lucu, menikmati kebersamaan sederhana kita yang selalu menghangatkan hati.",
+    Icon: GraduationCap,
+    label: "Rayain Wisuda",
+    desc: "Momen berharga merayakan hari kelulusanmu yang membanggakan, selalu bangga dan bahagia melihat pencapaian hebatmu.",
     img: "images/img4.jpeg",
+  },
+  {
+    Icon: Bike,
+    label: "Night Ride",
+    desc: "Menikmati perjalanan malam berdua di bawah gemerlap lampu kota dan hembusan angin malam yang syahdu.",
+    img: "images/img5.jpeg",
+  },
+  {
+    Icon: Heart,
+    label: "Second Date di Mixue",
+    desc: "Momen manis kencan kedua di Mixue, tempat paling bersejarah di mana kita resmi jadian dan memulai kisah cinta ini.",
+    img: "images/img6.jpeg",
   },
 ];
 
@@ -1496,52 +1496,100 @@ function WishesSection() {
 /* ── Gallery data with span information for masonry feel ── */
 const GALLERY_ITEMS = [
   {
-    src: 'images/img1.jpeg',
-    label: 'First Meet',
-    desc: 'Momen awal pertemuan pertama kita yang penuh kesan manis, awal mula dari segala cerita indah kita.',
-    Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+    src: 'images/memories/metrodate.jpeg',
+    label: 'Metro Date Seru',
+    desc: 'Jalan-jalan seru dan naik transportasi berdua, setiap sudut perjalanan terasa begitu indah saat bersamamu.',
+    Icon: Heart, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/img2.jpeg',
-    label: 'Fisheye Ceria & Gaya Seru',
-    desc: 'Pose gemas dan kocak dengan lensa fisheye sudut lebar, selalu ada tawa lepas dan kebebasan saat bersamamu.',
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 137.12.56.jpeg',
+    label: 'Wisudaan atau Pre-Wedding? 🤣',
+    desc: 'Ini foto wisudaan atau pre wedding ya 🤣 Saking cocok dan serasinya kita berdua.',
+    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.112.54.jpeg',
+    label: 'First Time Photobox Date',
+    desc: 'Pengalaman pertama kali kencan dan foto di photobox berdua, hasilnya lucu dan gemas banget.',
     Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/img3.jpeg',
-    label: 'Gandengan Tangan di Mall',
-    desc: 'Momen manis merangkul lenganmu saat jalan-jalan berdua, senyuman indahmu selalu membuat hatiku luluh.',
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.112.55.jpeg',
+    label: 'First Time Photobox Date',
+    desc: 'Pengalaman pertama kali kencan dan foto di photobox berdua, hasilnya lucu dan gemas banget.',
+    Icon: Sparkles, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.12.524.jpeg',
+    label: 'First Time Photobox Date',
+    desc: 'Pengalaman pertama kali kencan dan foto di photobox berdua, hasilnya lucu dan gemas banget.',
+    Icon: Flower2, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.12.53.jpeg',
+    label: 'First Time Photobox Date',
+    desc: 'Pengalaman pertama kali kencan dan foto di photobox berdua, hasilnya lucu dan gemas banget.',
+    Icon: Star, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.12.57.jpeg',
+    label: 'Sweet Warm Hug',
+    desc: 'The moment you hug me with all your sweet love, rasanya begitu hangat dan menenangkan hati.',
+    Icon: Camera, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.12.58.jpeg',
+    label: 'Sweet Warm Hug',
+    desc: 'The moment you hug me with all your sweet love, rasanya begitu hangat dan menenangkan hati.',
     Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/img4.jpeg',
-    label: 'Pose Santai & Penuh Sayang',
-    desc: 'Selfie santai dengan senyuman tulus dan pose lucu, menghabiskan waktu sederhana berdua dengan penuh cinta.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'images/img5.jpeg',
-    label: 'Tawa Malu & Gemas',
-    desc: 'Tawa lepas sambil menutup mulut karena tersipu malu, momen canda tawa paling berharga di antara kita.',
-    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
-  },
-  {
-    src: 'images/img6.jpeg',
-    label: 'First Date',
-    desc: 'Kencan pertama kita yang penuh debaran manis, senyuman malu-malu, dan kenangan indah yang tak terlupakan.',
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.122.58.jpeg',
+    label: 'Sweet Warm Hug',
+    desc: 'The moment you hug me with all your sweet love, rasanya begitu hangat dan menenangkan hati.',
     Icon: Heart, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/memories.mp4',
-    label: 'Video Kenangan Manis',
-    desc: 'Klip video rekaman indah yang mengabadikan setiap detik kebersamaan, tawa, dan cerita cinta kita.',
-    Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 1,
+    src: 'images/memories/WhatsApp Image 2026-09-22 at 17.132.57.jpeg',
+    label: 'Sweet Warm Hug',
+    desc: 'The moment you hug me with all your sweet love, rasanya begitu hangat dan menenangkan hati.',
+    Icon: Smile, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/footer.mp4',
-    label: 'Video Kenangan Manis',
-    desc: 'Klip video rekaman indah yang mengabadikan setiap detik kebersamaan, tawa, dan cerita cinta kita.',
+    src: 'images/memories/WhatsApp Image 2026a-09-22 at 17.12.59.jpeg',
+    label: 'After Kejadian Itu',
+    desc: 'Momen setelah kejadian hal yang nggak akan pernah aku ulangin dan lupain seumur hidup.',
+    Icon: Heart, accent: '#a84f65', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Image 21026-09-22 at 17.12.55.jpeg',
+    label: 'City Light With Youuu',
+    desc: 'Menikmati gemerlap city light malam hari bersamamu, pemandangan indah yang kalah cantik dari senyumanmu.',
+    Icon: Moon, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Video 2026-09-22 a2t 17.13.00.mp4',
+    label: 'Cafe Datee',
+    desc: 'Momen manis nongkrong dan ngobrol santai berdua di cafe favorit, selalu hangat dan penuh tawa.',
     Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Video 2026-09-22 at 17.12.53.mp4',
+    label: 'Nyanset Bareng',
+    desc: 'Momen syahdu menikmati matahari terbenam berdua, langit senja yang indah jadi saksi kebersamaan kita.',
+    Icon: Play, accent: '#c9a96e', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Video 2026-09-22 at 17.12.56.mp4',
+    label: 'Main Dari Pagi Buta',
+    desc: 'Kalo mau main mesti dari pagi-pagi buta supaya puas karena jarang ketemu 😭❤️',
+    Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
+  },
+  {
+    src: 'images/memories/WhatsApp Video 2026-09-22 at 17.13.00.mp4',
+    label: 'First Date BBQ Grill Ala Kadarnya',
+    desc: 'Momen kencan pertama nge-grill BBQ sederhana ala kadarnya, penuh tawa dan kehangatan yang tak terlupakan.',
+    Icon: Play, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
   },
 ];
 
@@ -2416,7 +2464,7 @@ function FinalSection({
    PIN LOCK SCREEN — Secret Birthday Gate with Flower Blooming Scene
    ═══════════════════════════════════════════════════════════════════════════ */
 
-const SECRET_PIN = '1409';
+const SECRET_PIN = '28926';
 
 function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBlooming: () => void }) {
   const [pin, setPin] = useState('');
@@ -2426,10 +2474,10 @@ function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBloom
   const lockRef = useRef<HTMLDivElement>(null);
 
   const handleKey = (digit: string) => {
-    if (pin.length < 4 && !success) {
+    if (pin.length < 5 && !success) {
       const newPin = pin + digit;
       setPin(newPin);
-      if (newPin.length === 4) {
+      if (newPin.length === 5) {
         verifyPin(newPin);
       }
     }
@@ -2574,17 +2622,17 @@ function PinLockScreen({ onUnlock, onBlooming }: { onUnlock: () => void; onBloom
         }}>
           {success
             ? 'Membuka kejutan cinta spesial untukmu...'
-            : (error ? 'PIN salah! Coba lagi ya sayang' : 'Masukkan 4 digit PIN untuk membuka surat cintamu')}
+            : (error ? 'PIN salah! Coba lagi ya sayang' : 'Masukkan 5 digit PIN untuk membuka surat cintamu')}
         </p>
 
-        {/* 4 Digit Indicators */}
+        {/* 5 Digit Indicators */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
           gap: 14,
           marginBottom: 32,
         }}>
-          {[0, 1, 2, 3].map(idx => {
+          {[0, 1, 2, 3, 4].map(idx => {
             const filled = pin.length > idx;
             return (
               <div
