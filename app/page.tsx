@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
    ═══════════════════════════════════════════════════════════════════════════ */
 const BIRTHDAY_DATE = new Date('2026-07-03T00:00:00');
 const NAME = 'Sayang';
-const SENDER_NAME = 'Aku ❤️';
+const SENDER_NAME = 'David ❤️';
 const YOUTUBE_MUSIC_ID = 'gvunApwKIiY'; // https://www.youtube.com/watch?v=awWKxGftWh4
 
 declare global {
@@ -1055,11 +1055,19 @@ function LetterSection() {
                 <div data-letter-line style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                   <Flower2 size={18} style={{ color: C.blush }} />
                   <p style={{ fontSize: 16, fontWeight: 600, fontFamily: SERIF, fontStyle: 'italic', color: C.blushD }}>
-                    Selamat Ulang Tahun, Sayangku! ❤️
+                    Untuk Nurmaysah :
                   </p>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, fontSize: 15, lineHeight: 1.95, color: C.textM, fontFamily: SANS }}>
+                  <p data-letter-line>
+                    Selamat ulang tahun ya, sayang. 🤍
+                  </p>
+
+                  <p data-letter-line style={{ color: C.text }}>
+                    Aku mungkin nggak pinter nyampein perasaan lewat kata-kata, tapi di hari ulang tahun kamu ini aku mau bilang sesuatu yang mungkin jarang aku sampaikan.
+                  </p>
+
                   <p data-letter-line>
                     Selamat ulang tahun untuk orang paling spesial dalam hidupku dan pemilik hati yang paling tulus.{" "}
                     <Flower2
@@ -1073,31 +1081,45 @@ function LetterSection() {
                   </p>
 
                   <p data-letter-line style={{ color: C.text }}>
-                    Selamat bertambah usia, selamat merayakan lembaran baru yang penuh dengan jutaan doa, cinta, dan impian indah yang menjadi kenyataan. Nikmati setiap momen di babak baru hidupmu ini dengan penuh tawa, kebahagiaan, dan rasa syukur. Semoga Allah senantiasa melindungi dan membimbing setiap langkahmu, sayang. Aku berharap setiap hari yang kau lalui selalu dipenuhi kehangatan, senyuman, dan cinta tulusku yang tak pernah habis untukmu.
+                    Selamat bertambah usia, selamat merayakan lembaran baru yang penuh dengan jutaan doa, cinta, dan impian indah yang menjadi kenyataan. Nikmati setiap momen di babak baru hidupmu ini dengan penuh tawa, kebahagiaan, dan rasa syukur. Semoga Allah senantiasa melindungi dan membimbing setiap langkahmu, sayang. Aku berharap setiap hari yang kau lalui selalu dipenuhi kehangatan, senyuman.
                   </p>
 
                   <p data-letter-line>
-                    Semoga di usiamu yang baru ini, kamu semakin dekat dengan semua impianmu dan hatimu selalu diliputi kedamaian. Semoga kamu senantiasa dikaruniai kesehatan, umur yang berkah, dan kebahagiaan yang berlimpah. Kamu adalah inspirasi terbesarku, dan aku sangat bersyukur memilikimu di hidupku. Jangan pernah lelah menjadi sosok yang manis, penuh perhatian, dan luar biasa seperti dirimu sekarang. Teruslah bersinar, sayang. Aku akan selalu ada di sampingmu, mendukung dan mencintaimu di setiap langkah! ✨💖
+                    Makasih ya, selama ini udah ngasih aku cinta, perhatian, dan ketulusan. Thank you juga sudah mau menerima aku dengan segala kurang dan lebihnya. Aku sadar, selama kita bareng mungkin aku sering bikin kamu kecewa, sedih, atau mungkin bikin km merasa nggk dihargai. Buat semua itu, aku benar-benar minta maaf.
                   </p>
 
                   <p data-letter-line style={{ color: C.text }}>
-                    Terima kasih telah menjadi dirimu yang apa adanya, dan terima kasih telah memilih untuk melangkah bersama mengarungi hidup ini. Aku sangat bangga padamu atas segala perjuangan dan hal-hal hebat yang telah kamu lakukan. Ketika hari-hari terasa berat, ingatlah bahwa kamu sangat dicintai, sangat berharga, dan kamu memiliki aku yang akan selalu percaya padamu serta siap menggenggam erat tanganmu.
+                    Aku tahu cuma bilang maaf nggak akan langsung menghapus semua rasa kecewa kamu. Tapi aku mau kamu tahu, aku nggak pernah bermaksud bikin kamu terluka.
                   </p>
 
                   <p data-letter-line>
-                    Setiap hari yang kulewati bersamamu adalah anugerah terindah yang selalu kusyukuri dengan segenap hatiku. Semoga Allah senantiasa memberkahi dirimu, keluargamu, dan perjalanan cinta kita dengan kebahagiaan dan keharmonisan yang abadi.
+                    Aku sayang sama kamu. Mungkin aku nggak selalu bisa nunjukin dengan cara yang kamu harapkan, tapi rasa sayang itu benaran ada. Dan semakin aku mengenal kamu, semakin aku sadar kalau kehadiran kamu berarti buat aku. 💖 ✨
                   </p>
 
                   <p data-letter-line style={{ color: C.text }}>
-                    Jika ada hal di dunia ini yang lebih memesona dari sekuntum bunga yang bermekaran, itu adalah senyuman manismu. Terima kasih atas setiap memori indah yang telah kita ukir bersama, dari awal pertemuan kita hingga saat-saat berharga di Malaysia. Semua kenangan itu terukir abadi di lubuk hatiku, dan aku tak sabar untuk merajut ribuan momen indah lainnya bersamamu.
+                    Aku nggak bisa janji akan selalu sempurna, karena aku juga masih banyak belajar. Tapi aku ingin terus belajar menjadi seseorang yang bisa membuat kamu merasa disayang, dihargai, dan merasa aman disaat bareng aku. 🥹 🫶🏻
                   </p>
 
                   <p data-letter-line>
-                    Semoga Allah senantiasa meridhoi cinta dan kebersamaan kita hingga ke surga-Nya kelak (Jannatul Firdaus). Terima kasih atas segala cinta, kebaikan, dan ketulusanmu yang tiada tara.
+                    Di umur kamu yang baru ini, aku cuma berharap kamu selalu sehat, bahagia, dan apa pun yang sedang kamu perjuangin bisa berjalan dengan baik. Semoga kamu selalu dikelilingi hal² baik dan orang² yang tulus menyayangi kamu. ✨
                   </p>
 
                   <p data-letter-line style={{ color: C.text }}>
-                    Aku mencintaimu sepenuh hatiku, hari ini, esok, dan selamanya. ❤️
+                    Dan kalau boleh aku berharap, semoga aku masih bisa menjadi orang yang menemani kamu melewati banyak hal ke depannya.
+                  </p>
+
+                  <p data-letter-line>
+                    Sekali lagi, selamat ulang tahun, sayang. 🥳
+                  </p>
+
+                  <p data-letter-line style={{ color: C.text }}>
+                    Terima kasih sudah hadir di hidup aku.<br />
+                    Terima kasih sudah menyayangi aku.<br />
+                    Dan maaf untuk semua hal yang pernah membuat kamu kecewa.
+                  </p>
+
+                  <p data-letter-line style={{ fontWeight: 600, color: C.blushD }}>
+                    Aku sayang kamu ❤️
                   </p>
 
                   {/* Signature */}
@@ -1107,8 +1129,8 @@ function LetterSection() {
                     display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
                   }}>
                     <div>
-                      <p style={{ fontSize: 11, color: C.textL, textTransform: 'uppercase', letterSpacing: '0.12em' }}>Dengan Seluruh Cintaku,</p>
-                      <span style={{ fontFamily: SERIF, fontSize: '1.45em', fontStyle: 'italic', color: C.blushD, fontWeight: 600 }}>{SENDER_NAME}</span>
+                      <span style={{ fontFamily: SERIF, fontSize: '1.45em', fontStyle: 'italic', color: C.blushD, fontWeight: 600 }}>- David</span>
+                      <p style={{ fontSize: 12, color: C.textL, marginTop: 4 }}>28 Sept 2026</p>
                     </div>
                     <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                       {[Flower2, Heart, Flower2].map((Ic, i) => (
@@ -1586,9 +1608,9 @@ const GALLERY_ITEMS = [
     Icon: Play, accent: '#d4899a', tag: 'Memories', rowSpan: 2,
   },
   {
-    src: 'images/memories/WhatsApp Video 2026-09-22 at 17.13.00.mp4',
-    label: 'First Date BBQ Grill Ala Kadarnya',
-    desc: 'Momen kencan pertama nge-grill BBQ sederhana ala kadarnya, penuh tawa dan kehangatan yang tak terlupakan.',
+    src: 'images/memories/WhatsApp Video 2026-09-22 at 18.01.16.mp4',
+    label: 'Kompilasi Momen Manis Berdua',
+    desc: 'Kumpulan cuplikan kenangan indah kita: dari cermin lucu, belanja boneka, baca buku, makan bareng hingga saling genggam tangan erat.',
     Icon: Play, accent: '#b8c7b0', tag: 'Memories', rowSpan: 2,
   },
 ];
